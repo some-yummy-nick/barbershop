@@ -14,7 +14,7 @@ header.header
       div.menu__wrapper.menu__wrapper--closed
         .container
           ul.menu__list
-            each  val, index in {'index.html':'Главная', 'works.html':'Наши работы', 'form.html':'Записаться', 'contacts.html':'Контакты', 'https://htmlacademy.ru/':'HTML Academy'}
+            each  val, index in {'index.html':'Главная', 'works.html':'Наши работы', 'for.html':'Записаться', 'contacts.html':'Контакты', 'https://htmlacademy.ru/':'HTML Academy'}
               li(class="menu__item" + ( (val=='Главная') ? ' menu__item--active' : ''))
                 a.menu__link(href= index)= val
           div.menu__user
