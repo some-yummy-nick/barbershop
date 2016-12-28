@@ -11,10 +11,7 @@ html
     script.
       WebFont.load({
         google: {
-          families: ["Lalezar:400", "Oswald:400,700"]
-        },
-        custom: {
-          families: ['Anfisa']
+          families: ["PT Sans:400,700"]
         }
       });
     noscript.
@@ -32,13 +29,15 @@ html
     <!--[if lt IE 8]>
     <p class="chromeframe">Похоже, что ты используешь устаревший браузер, друг. Пожалуйста, <a href="http://browsehappy.com/">скачай новый браузер абсолютно бесплатно</a> или <a href="http://www.google.com/chromeframe/?redirect=true">активируй Google Chrome Frame</a></p>
     <![endif]-->
-
+    .svg-wrapper(style='height: 0; width: 0; position: absolute; visibility: hidden')
+      include ../common/svg
     .wrapper
       .content
         include ../common/header
         block content
 
       include ../common/footer
-
+    include ../common/popup
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js')
     script(src='libraries/utils.js')
     script(src='scripts/index.js')

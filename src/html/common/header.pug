@@ -1,2 +1,21 @@
 header.header
-  p привет
+  h1 Барбершоп «Бородинский» — истинно мужская классика
+  .header__logo
+    .container
+      svg.header__svg.header__svg--mobile
+        use(xlink:href='#logotype-mobile')
+      svg.header__svg.header__svg--tablet
+        use(xlink:href='#logotype-tablet')
+      svg.header__svg.header__svg--desktop
+        use(xlink:href='#logotype-desktop')
+    nav.menu.menu--closed.menu--nojs
+      button.menu__toggle.menu__toggle--closed(type="button")
+        |Открыть меню
+      div.menu__wrapper.menu__wrapper--closed
+        .container
+          ul.menu__list
+            each  val, index in {'index.html':'Главная', 'works.html':'Наши работы', 'form.html':'Записаться', 'contacts.html':'Контакты', 'https://htmlacademy.ru/':'HTML Academy'}
+              li(class="menu__item" + ( (val=='Главная') ? ' menu__item--active' : ''))
+                a.menu__link(href= index)= val
+          div.menu__user
+            a.menu__user-login(href='/', title='Войти') Вход

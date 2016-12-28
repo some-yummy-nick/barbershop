@@ -1,0 +1,215 @@
+.reviews {
+  position: relative;
+  background-color: #fff;
+  border-top: 1px solid #e5ddd5;;
+  input {
+    display: none;
+  }
+  &__wrapper {
+    position: relative;
+    @include container;
+
+    padding-top: 27px;
+  }
+  &__nav {
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+  &__nav-btn {
+    position: relative;
+    cursor: pointer;
+    width: 10px;
+    height: 10px;
+    margin-right: 30px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 0;
+      right: 0;
+      width: 10px;
+      height: 10px;
+      border: 1px solid #353535;
+      transform: rotate(-45deg);
+    }
+  }
+  &__item {
+    position: relative;
+    display: none;
+  }
+  &__block {
+    padding-left: 60px;
+  }
+  &__auhor-foto {
+    position: absolute;
+    width: 50px;
+    height: 49px;
+    padding-right: 15px;
+    img {
+      border: 1px solid #e5ddd5;
+    }
+  }
+  &__auhor-name {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  &__title {
+    margin: 0;
+    margin-bottom: 28px;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  &__triangle {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 50px;
+    fill: #fff;
+  }
+}
+
+@media ($tablet-widths) {
+
+  .reviews {
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: 71px;
+    &__wrapper {
+      padding: 0;
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+    &__title {
+      margin-left: 70px;
+      text-align: left;
+      margin-bottom: 43px;
+    }
+    &__item {
+      //@include clearfix;
+    }
+    &__triangle {
+      display: none;
+    }
+    &__block {
+      padding-left: 160px;
+    }
+    &__auhor-foto {
+      //position: static;
+      //float: left;
+      width: 100px;
+      height: 150px;
+
+      img {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+      }
+    }
+    &__toggle {
+      position: absolute;
+      width: 50px;
+      height: 160px;
+      border: 1px solid #e5ddd5;
+      text-indent: -9999px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      background-color: #fff;
+
+      &:after {
+        content: '';
+        display: block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%);
+        position: absolute;
+      }
+      &--prev {
+        left: 10px;
+        &:after {
+          @include triangle(10px, black, left);
+        }
+      }
+      &--next {
+        right: 10px;
+        &:after {
+          @include triangle(10px, black, right);
+        }
+      }
+    }
+    &__write {
+      position: absolute;
+      right: 20px;
+      top: 30px;
+    }
+  }
+
+}
+
+@media ($desktop-widths) {
+
+  .reviews {
+    padding-bottom: 97px;
+    text-align: left;
+    &__title {
+      margin-left: 70px;
+
+      text-align: left;
+    }
+
+    &__block {
+      padding-left: 300px;
+    }
+    &__auhor-foto {
+      width: 249px;
+      height: 160px;
+
+      border: none;
+      img {
+        width: 249px;
+        height: 160px;
+        border-radius: 0;
+      }
+    }
+  }
+
+}
+
+@media ($mobile-widths-only) {
+  .reviews {
+    &__wrapper{
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+    .btn--reviews {
+      display: none;
+    }
+    &__toggle {
+      display: none;
+    }
+    &__write {
+      display: none;
+    }
+    &__nav {
+      padding-left: 50px;
+    }
+  }
+}
+
+#reviews-radio-1:checked ~ .reviews__nav .reviews__nav-btn:nth-of-type(1):after,
+#reviews-radio-2:checked ~ .reviews__nav .reviews__nav-btn:nth-of-type(2):after,
+#reviews-radio-3:checked ~ .reviews__nav .reviews__nav-btn:nth-of-type(3):after {
+  background-color: #353535;;
+}
+
+#reviews-radio-1:checked ~ .reviews__item:nth-of-type(1),
+#reviews-radio-2:checked ~ .reviews__item:nth-of-type(2),
+#reviews-radio-3:checked ~ .reviews__item:nth-of-type(3) {
+  display: block;;
+}

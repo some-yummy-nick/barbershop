@@ -1,0 +1,18 @@
+.popup
+  h2.title Личный кабинет
+  p Введите свой логин и пароль, чтобы войти
+  form.login
+    .login__block.login__block--login
+      input.login__field(placeholder="Логин" name="login")
+    .login__block.login__block--password
+      input.login__field(type="password" placeholder="Пароль" name="password")
+    input.login__check(type="checkbox" name="remember me" checked id="remember me")
+    label.login__remember(for="remember me") Запомните меня
+    a.login__forgot(href="index.html") Я забыл пароль!
+    button.login__btn(type="submit")
+      span.login__mobile  Войти
+      span.login__tablet Войти в личный кабинет
+    button.login__btn.login__btn--close(type="button")
+      span.login__mobile Закрыть
+
+
